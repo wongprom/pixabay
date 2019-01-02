@@ -20,7 +20,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <p>Jag är ren</p>
+
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/Contact" component={Contact} />
