@@ -2,26 +2,8 @@ $border-red: 1px solid red;
 $border-blue: 1px solid blue;
 $text-color: white;
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* Home Page */
@@ -29,6 +11,7 @@ $text-color: white;
   width: 100%;
   height: 100%;
   border: $border-red;
+
   .home-image-wrapper {
     position: relative;
     max-width: 1080px;
@@ -45,9 +28,19 @@ $text-color: white;
       transform: translate(-50%, -50%);
     }
   }
+  main {
+    margin: auto;
+
+    width: 80%;
+    border: $border-blue;
+    .intro-text {
+      text-align: center;
+    }
+  }
 }
 
 /* Footer */
 footer {
-  border: $border-blue;
+  height: 200px;
+  width: 100%;
 }
