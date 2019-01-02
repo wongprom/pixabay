@@ -11,8 +11,8 @@ import ErrorWrongURL from './components/ErrorWrongURL';
 //Route
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-//Styling css
-import './App.css';
+//Styling scss
+import './App.scss';
 
 class App extends Component {
   render() {
