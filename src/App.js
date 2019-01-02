@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 // import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 
 import About from './components/About';
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/About" component={About} />
             <Route component={ErrorWrongURL} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );
