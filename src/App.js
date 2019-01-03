@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 // import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 
 import About from './components/About';
-import Contact from './components/Contact';
+import Pix from './components/Pix';
 import Home from './components/Home';
 import ErrorWrongURL from './components/ErrorWrongURL';
 
@@ -23,7 +23,7 @@ class App extends Component {
 
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/Contact" component={Contact} />
+            <Route path="/Pix" component={Pix} />
             <Route path="/About" component={About} />
             <Route component={ErrorWrongURL} />
           </Switch>
