@@ -18,7 +18,7 @@ class Pix extends Component {
     images: []
   };
 
-  textChangeHandler = event => {
+  onTextChangeHandler = event => {
     //get data from api when typing in textfield
     this.setState({ [event.target.name]: event.target.value }, () => {
       axios
@@ -31,23 +31,30 @@ class Pix extends Component {
         .catch(err => console.log(err));
     });
   };
+
+  onAmountChangeHandler = (event, index, value) => {
+    this.setState({ amountPix: event.target.value });
+    // this.setState({ [event.target.amountPix]: event.target.value });
+  };
+
   render() {
+    console.log('Amount of pix' + ' ' + this.state.amountPix);
     console.log(this.state.images);
     return (
       <div>
         <TextField
           name="searchText"
           value={this.state.searchText}
-          onChange={this.textChangeHandler}
+          onChange={this.onTextChangeHandler}
           label="Search For Images"
           fullWidth={true}
         />
         <br />
         <Select
           name="amount"
-          label="Amount"
+          // label="Amount"
           value={this.state.amountPix}
-          onChange={this.amountChangeHandler}
+          onChange={this.onAmountChangeHandler}
         >
           <MenuItem value={3}>3</MenuItem>
           <MenuItem value={6}>6</MenuItem>
