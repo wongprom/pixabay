@@ -7,8 +7,21 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import ZoomIn from '@material-ui/icons/ZoomIn';
+import Dialog from '@material-ui/core/Dialog';
+import Button from '@material-ui/core/Button';
 
 class ImageResults extends Component {
+  state = {
+    seeBigImage: false,
+    imageToSee: ''
+  };
+  handleOpen = img => {
+    this.setState({ seeBigImage: true, imageToSee: img });
+  };
+  handleClose = () => {
+    this.setState({ seeBigImage: false });
+  };
+
   render(props) {
     let imageListContent;
     // destructure
@@ -28,7 +41,10 @@ class ImageResults extends Component {
                   </span>
                 }
                 actionIcon={
-                  <IconButton>
+                  // onClick = using arrow function because we sending a parameter,(img.largeImageURL)
+                  <IconButton
+                    onClick={() => this.handleOpen(image.largeImageURL)}
+                  >
                     <ZoomIn style={{ color: 'white' }} />
                   </IconButton>
                 }
@@ -40,7 +56,18 @@ class ImageResults extends Component {
     } else {
       imageListContent = null;
     }
-    return <div>{imageListContent}</div>;
+
+    return (
+      <div>
+        {imageListContent}
+        <Dialog open={this.state.seeBigImage}>
+          <img src={this.state.imageToSee} alt="" style={{ width: '100%' }} />
+          <Button onClick={this.handleClose} color="secondary">
+            Close
+          </Button>
+        </Dialog>
+      </div>
+    );
   }
 }
 export default ImageResults;
