@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -11,21 +12,21 @@ import Button from '@material-ui/core/Button';
 
 const navbar = () => {
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-
-          <Typography variant="h6" color="inherit">
-            News
-          </Typography>
-
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/" exact>
+            Hem
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/Pix">Pix</NavLink>
+        </li>
+        <li>
+          <NavLink to="/About">About</NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 };
 export default navbar;
