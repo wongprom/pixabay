@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ImageResults from './ImageResults';
 // import from framework material ui
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
@@ -18,41 +19,57 @@ class Pix extends Component {
     images: []
   };
 
-  textChangeHandler = event => {
+  onTextChangeHandler = event => {
+    const val = event.target.value;
     //get data from api when typing in textfield
-    this.setState({ [event.target.name]: event.target.value }, () => {
-      axios
-        .get(
-          `${this.state.pixabayURL}/?key=${this.state.apiKey}&q=${
-            this.state.searchText
-          }&image_type=photo&per_page=${this.state.amountPix}`
-        )
-        .then(res => this.setState({ images: res.data.hits }))
-        .catch(err => console.log(err));
+    this.setState({ [event.target.name]: val }, () => {
+      // if statement = Remove pix from UI when delete searchtext.
+      if (val === '') {
+        this.setState({ images: [] });
+      } else {
+        axios
+          .get(
+            `${this.state.pixabayURL}/?key=${this.state.apiKey}&q=${
+              this.state.searchText
+            }&image_type=photo&per_page=${this.state.amountPix}`
+          )
+          .then(res => this.setState({ images: res.data.hits }))
+          .catch(err => console.log(err));
+      }
     });
   };
+
+  onAmountChangeHandler = (event, index, value) => {
+    this.setState({ amountPix: event.target.value });
+    // this.setState({ [event.target.amountPix]: event.target.value });
+  };
+
   render() {
+    console.log('Amount of pix' + ' ' + this.state.amountPix);
     console.log(this.state.images);
     return (
       <div>
         <TextField
           name="searchText"
           value={this.state.searchText}
-          onChange={this.textChangeHandler}
+          onChange={this.onTextChangeHandler}
           label="Search For Images"
           fullWidth={true}
         />
         <br />
         <Select
           name="amount"
-          label="Amount"
           value={this.state.amountPix}
-          onChange={this.amountChangeHandler}
+          onChange={this.onAmountChangeHandler}
         >
           <MenuItem value={3}>3</MenuItem>
           <MenuItem value={6}>6</MenuItem>
           <MenuItem value={9}>9</MenuItem>
         </Select>
+        <br />
+        {this.state.images.length > 0 ? (
+          <ImageResults images={this.state.images} />
+        ) : null}
       </div>
     );
   }
