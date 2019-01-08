@@ -20,16 +20,22 @@ class Pix extends Component {
   };
 
   onTextChangeHandler = event => {
+    const val = event.target.value;
     //get data from api when typing in textfield
-    this.setState({ [event.target.name]: event.target.value }, () => {
-      axios
-        .get(
-          `${this.state.pixabayURL}/?key=${this.state.apiKey}&q=${
-            this.state.searchText
-          }&image_type=photo&per_page=${this.state.amountPix}`
-        )
-        .then(res => this.setState({ images: res.data.hits }))
-        .catch(err => console.log(err));
+    this.setState({ [event.target.name]: val }, () => {
+      // if statement = Remove pix from UI when delete searchtext.
+      if (val === '') {
+        this.setState({ images: [] });
+      } else {
+        axios
+          .get(
+            `${this.state.pixabayURL}/?key=${this.state.apiKey}&q=${
+              this.state.searchText
+            }&image_type=photo&per_page=${this.state.amountPix}`
+          )
+          .then(res => this.setState({ images: res.data.hits }))
+          .catch(err => console.log(err));
+      }
     });
   };
 
