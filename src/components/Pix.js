@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ImageResults from './ImageResults';
 // import from framework material ui
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
@@ -52,7 +53,6 @@ class Pix extends Component {
         <br />
         <Select
           name="amount"
-          // label="Amount"
           value={this.state.amountPix}
           onChange={this.onAmountChangeHandler}
         >
@@ -60,6 +60,10 @@ class Pix extends Component {
           <MenuItem value={6}>6</MenuItem>
           <MenuItem value={9}>9</MenuItem>
         </Select>
+        <br />
+        {this.state.images.length > 0 ? (
+          <ImageResults images={this.state.images} />
+        ) : null}
       </div>
     );
   }
