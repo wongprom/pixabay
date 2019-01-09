@@ -1,22 +1,42 @@
 import React from 'react';
+// import from material ui
+import Button from '@material-ui/core/Button';
 import ImageEvolution from '../components/images/evolution.jpg';
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="home-image-wrapper">
-        <img src={ImageEvolution} alt="Human Evolution" />
-        <div className="text-wrapper">
-          <h1>PixaBay API</h1>
+      <div className="hero-section">
+        <div className="section-left">
+          <div className="left-text-box">
+            <p>JIMMY WONGPROM presents</p>
+            <p>Search Pix from PixaBay API</p>
+            <Button variant="contained" color="secondary">
+              Get Started
+            </Button>
+          </div>
         </div>
-        <main role="main">
-          <header className="intro-text">
-            <h3>Welcome To My API Project With React</h3>
-            <p>
-              Lorem ipsum dolor sit amet, id vis bonorum omittam, cu nam illum
-            </p>
-          </header>
-        </main>
+        <div className="section-right">
+          <div className="right-text-box">
+            <img src={ImageEvolution} alt="human evolution" />
+          </div>
+        </div>
+      </div>
+      <div className="intro-section">
+        <div className="intro-left">
+          <div className="left-text-box">
+            <img src={ImageEvolution} alt="human evolution" />
+          </div>
+        </div>
+        <div className="intro-right">
+          <div className="right-text-box">
+            <p>JIMMY WONGPROM presents</p>
+            <p>Search Pix from PixaBay API</p>
+            <Button variant="contained" color="secondary">
+              Get Started
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
