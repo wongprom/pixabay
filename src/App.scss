@@ -2,18 +2,16 @@ $border-red: 1px solid red;
 $border-blue: 1px solid blue;
 $text-color: white;
 
-.App-link {
-  color: #61dafb;
-}
 // navigation
 nav {
+  font-family: 'Roboto', sans-serif;
   // height: 100px;
-  background: rgb(114, 77, 9);
+  background: rgb(29, 28, 28);
 
   ul {
     margin: 0;
     padding: 0;
-    height: 100px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -23,6 +21,7 @@ nav {
       a {
         color: white;
         text-decoration: none;
+        font-size: 1.1rem;
 
         &.active,
         &:hover {
@@ -41,7 +40,6 @@ nav {
 
   .home-image-wrapper {
     position: relative;
-    max-width: 1080px;
     height: 400px;
     img {
       height: 100%;
