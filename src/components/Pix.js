@@ -48,28 +48,38 @@ class Pix extends Component {
     console.log('Amount of pix' + ' ' + this.state.amountPix);
     console.log(this.state.images);
     return (
-      <div>
-        <TextField
-          name="searchText"
-          value={this.state.searchText}
-          onChange={this.onTextChangeHandler}
-          label="Search For Images"
-          fullWidth={true}
-        />
+      <div className="pix">
+        <div className="hero-section">
+          <div className="text-field">
+            <TextField
+              name="searchText"
+              value={this.state.searchText}
+              onChange={this.onTextChangeHandler}
+              label="Search For Images"
+              fullWidth={true}
+            />
+          </div>
+
+          <br />
+          <div className="select">
+            <Select
+              name="amount"
+              value={this.state.amountPix}
+              onChange={this.onAmountChangeHandler}
+            >
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={6}>6</MenuItem>
+              <MenuItem value={9}>9</MenuItem>
+            </Select>
+          </div>
+        </div>
+
         <br />
-        <Select
-          name="amount"
-          value={this.state.amountPix}
-          onChange={this.onAmountChangeHandler}
-        >
-          <MenuItem value={3}>3</MenuItem>
-          <MenuItem value={6}>6</MenuItem>
-          <MenuItem value={9}>9</MenuItem>
-        </Select>
-        <br />
-        {this.state.images.length > 0 ? (
-          <ImageResults images={this.state.images} />
-        ) : null}
+        <div className="image-results">
+          {this.state.images.length > 0 ? (
+            <ImageResults images={this.state.images} />
+          ) : null}
+        </div>
       </div>
     );
   }
