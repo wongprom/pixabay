@@ -146,11 +146,10 @@ nav {
   color: white;
   .about {
     width: 80%;
-    border: $border-red;
     margin: 0 auto;
 
     h3 {
-      margin-bottom: 0;
+      margin: 0;
       font-size: 1.5rem;
     }
     .about-section {
@@ -183,6 +182,7 @@ nav {
     }
     .experience-section {
       display: flex;
+      margin: 20px auto;
       .experience {
         flex-grow: 1;
       }
@@ -204,7 +204,6 @@ nav {
         justify-content: space-between;
         align-items: center;
         flex: 2;
-        border: $border-red;
         .img-box {
           height: 140px;
           width: 140px;
