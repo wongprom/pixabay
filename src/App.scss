@@ -8,7 +8,6 @@ nav {
   font-family: 'Roboto', sans-serif;
   // height: 100px;
   background: rgb(29, 28, 28);
-  border-bottom: 5px solid gray;
 
   ul {
     margin: 0;
@@ -143,6 +142,7 @@ nav {
 
 // about page
 .wrapper {
+  padding-top: 10px;
   background: black;
   color: white;
   .about {
@@ -243,10 +243,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 5px solid gray;
+
   height: 200px;
   width: 100%;
-  background: black;
+  background: rgb(29, 28, 28);
 
   p {
     color: white;
