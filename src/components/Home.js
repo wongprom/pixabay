@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 // import from material ui
 import Button from '@material-ui/core/Button';
 import ImageEvolution from '../components/images/evolution.jpg';
@@ -11,8 +12,13 @@ const Home = () => {
           <div className="left-text-box">
             <p>JIMMY WONGPROM presents</p>
             <p>Search Pix from PixaBay API</p>
-            <Button variant="contained" color="secondary">
-              Get Started
+            <Button
+              component={NavLink}
+              to="/pix"
+              variant="contained"
+              color="secondary"
+            >
+              Let's Go
             </Button>
           </div>
         </div>
@@ -32,8 +38,13 @@ const Home = () => {
           <div className="right-text-box">
             <p>JIMMY WONGPROM presents</p>
             <p>Search Pix from PixaBay API</p>
-            <Button variant="contained" color="secondary">
-              Get Started
+            <Button
+              component={NavLink}
+              to="/pix"
+              variant="contained"
+              color="secondary"
+            >
+              Let's Go
             </Button>
           </div>
         </div>
