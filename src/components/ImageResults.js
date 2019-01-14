@@ -41,7 +41,7 @@ class ImageResults extends Component {
                   </span>
                 }
                 actionIcon={
-                  // onClick = using arrow function because we sending a parameter,(img.largeImageURL)
+                  // onClick = using arrow function because we sending parameter,(img.largeImageURL)
                   <IconButton
                     onClick={() => this.handleOpen(image.largeImageURL)}
                   >

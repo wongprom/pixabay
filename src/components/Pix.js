@@ -9,11 +9,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 // error when import axios as below
 // import axios from 'axois';
 //had to import axios like this to work
-import axios, { AxiosRequestConfig, AxiosPromise, AxiosResponse } from 'axios';
+import axios from 'axios';
 class Pix extends Component {
   state = {
     searchText: '',
-    amountPix: 3,
+    amountPix: 21,
     pixabayURL: 'https://pixabay.com/api',
     apiKey: '10613712-4767a5b68425b631d01c0dcad',
     images: []
@@ -67,19 +67,16 @@ class Pix extends Component {
               value={this.state.amountPix}
               onChange={this.onAmountChangeHandler}
             >
-              <MenuItem value={3}>3</MenuItem>
-              <MenuItem value={6}>6</MenuItem>
-              <MenuItem value={9}>9</MenuItem>
+              <MenuItem value={21}>21</MenuItem>
+              <MenuItem value={24}>24</MenuItem>
+              <MenuItem value={30}>30</MenuItem>
             </Select>
           </div>
         </div>
 
-        <br />
-        <div className="image-results">
-          {this.state.images.length > 0 ? (
-            <ImageResults images={this.state.images} />
-          ) : null}
-        </div>
+        {this.state.images.length > 0 ? (
+          <ImageResults images={this.state.images} />
+        ) : null}
       </div>
     );
   }

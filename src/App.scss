@@ -220,6 +220,24 @@ nav {
   }
 }
 
+// pix page
+
+.pix {
+  height: 100vh;
+  width: 100%;
+  background: rgb(138, 104, 104);
+  .hero-section {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    .select {
+    }
+  }
+  .image-results {
+    border: $border-blue;
+  }
+}
+
 /* Footer */
 footer {
   height: 200px;
