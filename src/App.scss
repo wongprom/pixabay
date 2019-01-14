@@ -8,6 +8,7 @@ nav {
   font-family: 'Roboto', sans-serif;
   // height: 100px;
   background: rgb(29, 28, 28);
+  border-bottom: 5px solid gray;
 
   ul {
     margin: 0;
@@ -195,6 +196,7 @@ nav {
     }
     .personal-section {
       display: flex;
+      padding-bottom: 20px;
       .personal {
         flex: 1;
         margin-right: 20px;
@@ -223,15 +225,13 @@ nav {
 // pix page
 
 .pix {
-  height: 100vh;
+  min-height: 80vh;
   width: 100%;
   background: rgb(138, 104, 104);
   .hero-section {
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;
-    .select {
-    }
   }
   .image-results {
     border: $border-blue;
@@ -240,6 +240,15 @@ nav {
 
 /* Footer */
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 5px solid gray;
   height: 200px;
   width: 100%;
+  background: black;
+
+  p {
+    color: white;
+  }
 }
