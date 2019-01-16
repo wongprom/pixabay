@@ -1,8 +1,12 @@
 import React from 'react';
 import Keps from './images/keps.jpg';
 import GitHub from './images/github.png';
+import Axios from 'axios';
 
 const About = () => {
+  Axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err));
   return (
     <div className="wrapper">
       <div className="about">
